@@ -1,22 +1,21 @@
 package org.example;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
-
-
     static void calculator() {
         Scanner scanner = new Scanner(System.in);
-        int result = 0;
+        double result = 0;
 
         while (true) {
             System.out.println("Input first value: ");
-            int valOne = scanner.nextInt();
+            double valOne = scanner.nextFloat();
             scanner.nextLine();
             System.out.println("Input operator: ");
             String operator = scanner.nextLine();
             System.out.println("Input second value: ");
-            int valTwo = scanner.nextInt();
+            double valTwo = scanner.nextFloat();
             scanner.nextLine();
 
             switch (operator) {
@@ -37,7 +36,7 @@ public class Main {
                     continue;
             }
 
-            System.out.printf("The result of (%d %s %d) is %d", valOne, operator, valTwo, result);
+            System.out.printf("The result of (%s %s %s) is %s", valOne, operator, valTwo, new DecimalFormat("#.######").format(result));
             System.out.println();
         }
     }
